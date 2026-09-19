@@ -49,7 +49,7 @@ Celery + Redis
        ↓
  External APIs
 
-## 🛠️ Tech Stack
+**🛠️ Tech Stack **
 
 Backend
 Python
@@ -74,7 +74,7 @@ Docker
 Docker Compose
 GitHub Actions
 
-## 🔌 API Endpoints
+**🔌 API Endpoints **
 Monitor APIs
 GET     /api/monitors/
 POST    /api/monitors/
@@ -121,7 +121,7 @@ docker compose ps
 Stop the services:
 docker compose down
 
-## 🎯 Why I Built This
+**🎯 Why I Built This**
 Real applications depend on many APIs and services. When an API becomes slow or unavailable, developers need to quickly understand:
 Is the API currently healthy?
 When did the problem start?
@@ -132,7 +132,7 @@ What evidence is available for investigating the incident?
 This project was built to explore how a monitoring and reliability platform can answer these questions through automated checks,
  historical data, metrics, incident management, and AI-assisted analysis.
 
-##🔮 Future Improvements
+**🔮 Future Improvements**
 Possible future enhancements include:
 Scheduled monitoring through Celery Beat
 Email/Slack notifications
@@ -148,6 +148,6 @@ Production deployment
 Kubernetes support
 More comprehensive observability metrics
 
-## 👩‍💻 Author
-## KOLA JHANSI
+** 👩‍💻 Author **
+** KOLA JHANSI **
 Built as a full-stack backend engineering project using Python, Django, React, MySQL, Redis, Celery, Docker, pytest, and GitHub Actions.
