@@ -52,6 +52,7 @@ jobs:
         working-directory: config
         env:
           DJANGO_SETTINGS_MODULE: config.settings
-          SECRET_KEY : "django-insecure-ci-test-key"
-          DEBUG : "TRUE"
+          SECRET_KEY: "django-insecure-ci-test-key"
+          DEBUG: "TRUE"
+          DB_SSL: "false"
         run: pytest -v
