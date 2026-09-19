@@ -30,12 +30,11 @@ const [monitorForm, setMonitorForm] = useState({
   const resolveIncident = async (incidentId) => {
   try {
     const response = await fetch(
-      `http://127.0.0.1:8000/api/incidents/${incidentId}/resolve/`,
-      {
-        method: "POST",
-      }
-    );
-
+  `https://smart-api-reliability-backend.onrender.com/api/incidents/${incidentId}/resolve/`,
+  {
+    method: "POST",
+  }
+);
     if (!response.ok) {
       throw new Error("Failed to resolve incident");
     }
@@ -73,7 +72,7 @@ const [monitorForm, setMonitorForm] = useState({
 
   try {
     const response = await fetch(
-      "http://127.0.0.1:8000/api/monitors/",
+      "https://smart-api-reliability-backend.onrender.com/api/monitors/",
       {
         method: "POST",
         headers: {
@@ -139,7 +138,7 @@ const [monitorForm, setMonitorForm] = useState({
 
         // Load incidents
         const incidentResponse = await fetch(
-          "http://127.0.0.1:8000/api/incidents/"
+          "https://smart-api-reliability-backend.onrender.com/api/incidents/"
         );
 
         if (incidentResponse.ok) {
@@ -154,7 +153,7 @@ const [monitorForm, setMonitorForm] = useState({
 
         // Load monitors
         const monitorResponse = await fetch(
-          "http://127.0.0.1:8000/api/monitors/"
+          "https://smart-api-reliability-backend.onrender.com/api/monitors/"
         );
 
         const monitorList =
@@ -171,7 +170,7 @@ const [monitorForm, setMonitorForm] = useState({
 
                 const checkResponse =
                   await fetch(
-                    `http://127.0.0.1:8000/api/monitors/${monitor.id}/check/`,
+                    `https://smart-api-reliability-backend.onrender.com/api/monitors/${monitor.id}/check/`,
                     {
                       method: "POST",
                     }
@@ -183,7 +182,7 @@ const [monitorForm, setMonitorForm] = useState({
 
                 const metricsResponse =
                   await fetch(
-                    `http://127.0.0.1:8000/api/monitors/${monitor.id}/metrics/`
+                    `https://smart-api-reliability-backend.onrender.com/api/monitors/${monitor.id}/metrics/`
                   );
 
                 const metrics =
@@ -192,7 +191,7 @@ const [monitorForm, setMonitorForm] = useState({
 
                 const resultsResponse =
                   await fetch(
-                    `http://127.0.0.1:8000/api/monitors/${monitor.id}/results/`
+                    `https://smart-api-reliability-backend.onrender.com/api/monitors/${monitor.id}/results/`
                   );
 
                 const results =
@@ -201,7 +200,7 @@ const [monitorForm, setMonitorForm] = useState({
 
                 const degradationResponse =
                   await fetch(
-                    `http://127.0.0.1:8000/api/monitors/${monitor.id}/degradation/`
+                    `https://smart-api-reliability-backend.onrender.com/api/monitors/${monitor.id}/degradation/`
                   );
 
                 const degradation =
