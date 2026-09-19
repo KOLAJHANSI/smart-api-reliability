@@ -1,5 +1,5 @@
 import pytest
-from unittest.mock import patch
+from unittest.mock import patch , MagicMock
 
 from rest_framework.test import APIClient
 
@@ -71,11 +71,12 @@ def test_monitor_crud_api(api_client):
 @patch("monitors.views.check_monitor")
 def test_health_check_endpoint(mock_check_monitor, api_client, monitor):
 
-    mock_check_monitor.return_value = {
-        "status_code": 200,
-        "response_time": 0.5,
-        "is_healthy": True
-    }
+    mock_result = MagicMock()
+    mock_result.status_code = 200
+    mock_result.response_time = 0.5
+    mock_result.is_healthy = True
+
+    mock_check_monitor.return_value = mock_result
 
     response = api_client.post(
         f"/api/monitors/{monitor.id}/check/"
