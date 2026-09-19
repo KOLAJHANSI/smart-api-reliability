@@ -49,104 +49,45 @@ Celery + Redis
        ↓
  External APIs
 
-**🛠️ Tech Stack **
 
-Backend
-Python
-Django
-Django REST Framework
-MySQL
-Celery
-Redis
-Requests
-Frontend
-React
-Vite
-Recharts
-CSS
-Testing
-pytest
-Django testing
-API testing
-Mocking
-DevOps
-Docker
-Docker Compose
-GitHub Actions
 
-**🔌 API Endpoints **
-Monitor APIs
+## 🛠️ Tech Stack
+
+- **Backend:** Python, Django, Django REST Framework
+- **Database:** MySQL
+- **Background Processing:** Celery, Redis
+- **Frontend:** React, Vite, Recharts
+- **Testing:** pytest
+- **AI:** AI-powered Incident Analysis
+- **DevOps:** Docker, Docker Compose, GitHub Actions
+- **API Communication:** Requests
+
+## 🔌 API Endpoints
+
+### Monitor Management
+
+```text
 GET     /api/monitors/
 POST    /api/monitors/
 GET     /api/monitors/{id}/
 PUT     /api/monitors/{id}/
 PATCH   /api/monitors/{id}/
 DELETE  /api/monitors/{id}/
-## Health Check
-POST    /api/monitors/{id}/check/
-## Historical Results
-GET     /api/monitors/{id}/results/
-## Metrics
-GET     /api/monitors/{id}/metrics/
-## Degradation Detection
-GET     /api/monitors/{id}/degradation/
-## Incidents
-GET     /api/incidents/
-POST    /api/incidents/{id}/resolve/
-## 🧪 Testing
-The project includes automated tests covering:
-Monitor CRUD operations
-API health checks
-Metrics calculation
-Historical results
-Degradation detection
-Incident APIs
-Incident resolution
-AI incident analysis
-## Current test suite:
-15 tests passed
-## Run the tests with:
-cd config
-pytest -v
-## 🐳 Running with Docker
-The application can be started using Docker Compose.
-docker compose build
-docker compose up -d
-Services:
-Frontend  → http://localhost:5173
-Backend   → http://localhost:8000
-Redis     → localhost:6379
-## Check running containers:
-docker compose ps
-Stop the services:
-docker compose down
-
-**🎯 Why I Built This**
-Real applications depend on many APIs and services. When an API becomes slow or unavailable, developers need to quickly understand:
-Is the API currently healthy?
-When did the problem start?
-How frequently is it failing?
-Has response time increased?
-Is the problem temporary or persistent?
-What evidence is available for investigating the incident?
-This project was built to explore how a monitoring and reliability platform can answer these questions through automated checks,
- historical data, metrics, incident management, and AI-assisted analysis.
-
-**🔮 Future Improvements**
-Possible future enhancements include:
-Scheduled monitoring through Celery Beat
-Email/Slack notifications
-Authentication and user accounts
-Role-based access control
-More advanced reliability scoring
-Uptime/SLA reporting
-Rate-limit monitoring
-API response validation
-POST/PUT/PATCH/DELETE health checks
-Advanced anomaly detection
-Production deployment
-Kubernetes support
 More comprehensive observability metrics
+
+## 🤔 Why I Built This
+
+Modern applications depend on multiple APIs and external services. When an API becomes slow or unavailable, developers need to quickly understand what happened and how it affects the system.
+
+I built this project to create a practical API reliability platform that monitors API health, tracks performance, detects degradation, manages incidents, and provides AI-powered analysis to help developers investigate potential causes.
+
+The project also gave me hands-on experience with backend development, REST APIs, databases, asynchronous processing, automated testing, Docker, and CI/CD.
+
+## 🚀 Future Improvements
+
+The platform can be extended with scheduled monitoring using Celery Beat, real-time notifications through email or Slack, user authentication and role-based access control, advanced anomaly detection, SLA and uptime reporting, API response validation, and support for additional HTTP methods.
+
+Future versions could also include production deployment, Kubernetes-based scaling, advanced observability, and more intelligent incident analysis.
 
 ** 👩‍💻 Author **
 ** KOLA JHANSI **
