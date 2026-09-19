@@ -81,6 +81,8 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+DB_SSL = os.getenv("DB_SSL", "true").lower() == "true"
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
@@ -89,14 +91,15 @@ DATABASES = {
         "PASSWORD": os.getenv("DB_PASSWORD", ""),
         "HOST": os.getenv("DB_HOST", "localhost"),
         "PORT": os.getenv("DB_PORT", "3306"),
-        "OPTIONS": {
-            "ssl": {
-                "ca": os.path.join(BASE_DIR, "certs", "ca.pem"),
-            },
-        },
     }
 }
 
+if DB_SSL:
+    DATABASES["default"]["OPTIONS"] = {
+        "ssl": {
+            "ca": str(BASE_DIR / "certs" / "ca.pem"),
+        },
+    }
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
