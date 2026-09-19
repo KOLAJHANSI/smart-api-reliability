@@ -1,0 +1,25 @@
+services:
+
+  backend:
+    build:
+      context: ./config
+    container_name: smart-api-backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: smart-api-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+  redis:
+    image: redis:latest
+    container_name: smart-api-redis
+    ports:
+      - "6379:6379"
