@@ -167,7 +167,7 @@ CELERY_BEAT_SCHEDULE = {
 
 CORS_ALLOWED_ORIGINS = os.getenv(
     "CORS_ALLOWED_ORIGINS",
-    "http://localhost:5173"
+    "https://smart-api-reliability-frontend.onrender.com"
 ).split(",")
 
 
