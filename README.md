@@ -34,7 +34,7 @@ It stores historical monitoring data, calculates reliability metrics, detects pe
 
 ## 🏗️ Architecture
 
-```text
+text
 React Dashboard
        ↓
 Django REST API
