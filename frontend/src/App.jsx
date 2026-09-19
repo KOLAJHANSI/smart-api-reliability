@@ -256,7 +256,7 @@ const [monitorForm, setMonitorForm] = useState({
 
         setMonitors(detailedMonitors);
 
-        setLoading(false);
+        
 
       } catch (error) {
 
